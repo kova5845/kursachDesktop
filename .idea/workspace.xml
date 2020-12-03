@@ -1,7 +1,67 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
+  <component name="BranchesTreeState">
+    <expand>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="LOCAL_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+      <path>
+        <item name="ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="REMOTE_ROOT" type="e8cecc67:BranchNodeDescriptor" />
+        <item name="GROUP_NODE:origin" type="e8cecc67:BranchNodeDescriptor" />
+      </path>
+    </expand>
+    <select />
+  </component>
   <component name="ChangeListManager">
-    <list default="true" id="89b911a4-a924-410c-96ac-b138595f1da3" name="Default Changelist" comment="" />
+    <list default="true" id="89b911a4-a924-410c-96ac-b138595f1da3" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ComputerGame.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/Game.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/GameRest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ScAddr.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ScArcInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ScKeynodes.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ScType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpClient.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmd.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdArcInfo.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdCreateArc.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdCreateLink.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdCreateNode.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdElementType.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdEraseElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdFindBySysIdentifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdFindLinksByContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdGetLinkContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdIsElement.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdIterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdSetLinkContent.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdSetSysIdentifier.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpIterator.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpResult.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/Server.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/TestTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/tasks/ConnectTask.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/tasks/RequestCommand.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/MainApp.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/controller/MainController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/controller/ViewController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/model/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/MainApp.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/controller/MainController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/controller/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/controller/ViewController.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/target/classes/com/project/model/Game.class" beforeDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -14,29 +74,33 @@
       </list>
     </option>
   </component>
-  <component name="MavenImportPreferences">
-    <option name="importingSettings">
-      <MavenImportingSettings>
-        <option name="importAutomatically" value="true" />
-      </MavenImportingSettings>
-    </option>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
   <component name="ProjectId" id="1l1E5SxivSnz9pZ9GFiMgosYc1n" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
-    <option name="showExcludedFiles" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="ASKED_ADD_EXTERNAL_FILES" value="true" />
+    <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="aspect.path.notification.shown" value="true" />
-    <property name="last_opened_file_path" value="C:/Program Files/SceneBuilder/SceneBuilder.exe" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="project.structure.last.edited" value="Modules" />
+    <property name="project.structure.proportion" value="0.0" />
+    <property name="project.structure.side.proportion" value="0.0" />
   </component>
   <component name="RunManager">
-    <configuration name="MainApp" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+    <configuration name="MainApp" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.project.MainApp" />
-      <module name="kursach" />
+      <module name="kursachDesktop" />
       <extension name="coverage">
         <pattern>
           <option name="PATTERN" value="com.project.*" />
@@ -47,11 +111,6 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <recent_temporary>
-      <list>
-        <item itemvalue="Application.MainApp" />
-      </list>
-    </recent_temporary>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -65,13 +124,40 @@
       <updated>1606756020430</updated>
       <workItem from="1606756037638" duration="12027000" />
       <workItem from="1606839735963" duration="14435000" />
+      <workItem from="1607013764247" duration="14460000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
-    <option name="version" value="1" />
+    <option name="version" value="2" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state x="355" y="0" width="660" height="736" key="#MainApp" timestamp="1607014348774">
+      <screen x="0" y="0" width="1366" height="741" />
+    </state>
+    <state x="355" y="0" width="660" height="736" key="#MainApp/0.0.1366.741@0.0.1366.741" timestamp="1607014348774" />
+    <state x="166" y="0" width="1024" height="736" key="#Project_Structure" timestamp="1607014731989">
+      <screen x="0" y="0" width="1366" height="741" />
+    </state>
+    <state x="166" y="0" width="1024" height="736" key="#Project_Structure/0.0.1366.741@0.0.1366.741" timestamp="1607014731989" />
+    <state x="468" y="76" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog" timestamp="1607014261544">
+      <screen x="0" y="0" width="1366" height="741" />
+    </state>
+    <state x="468" y="76" width="424" height="579" key="#com.intellij.ide.macro.MacrosDialog/0.0.1366.741@0.0.1366.741" timestamp="1607014261544" />
     <state x="488" y="79" key="#com.intellij.ide.util.MemberChooser" timestamp="1606847544859">
       <screen x="0" y="0" width="1366" height="728" />
     </state>
@@ -80,22 +166,26 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606765412558" />
-    <state width="1323" height="208" key="GridCell.Tab.0.bottom" timestamp="1606937052574">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="192" key="GridCell.Tab.0.bottom" timestamp="1607028312745">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="208" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606937052574" />
-    <state width="1323" height="208" key="GridCell.Tab.0.center" timestamp="1606937052574">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="192" key="GridCell.Tab.0.bottom/0.0.1366.741@0.0.1366.741" timestamp="1607028312745" />
+    <state width="1324" height="192" key="GridCell.Tab.0.center" timestamp="1607028312744">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="208" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606937052574" />
-    <state width="1323" height="208" key="GridCell.Tab.0.left" timestamp="1606937052573">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="192" key="GridCell.Tab.0.center/0.0.1366.741@0.0.1366.741" timestamp="1607028312744" />
+    <state width="1324" height="192" key="GridCell.Tab.0.left" timestamp="1607028312743">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="208" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606937052573" />
-    <state width="1323" height="208" key="GridCell.Tab.0.right" timestamp="1606937052574">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="192" key="GridCell.Tab.0.left/0.0.1366.741@0.0.1366.741" timestamp="1607028312743" />
+    <state width="1324" height="192" key="GridCell.Tab.0.right" timestamp="1607028312745">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="208" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606937052574" />
+    <state width="1324" height="192" key="GridCell.Tab.0.right/0.0.1366.741@0.0.1366.741" timestamp="1607028312745" />
     <state width="1323" height="237" key="GridCell.Tab.1.bottom" timestamp="1606775274967">
       <screen x="0" y="0" width="1366" height="728" />
     </state>

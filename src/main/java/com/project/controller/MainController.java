@@ -1,6 +1,7 @@
 package com.project.controller;
 
-import com.project.model.Game;
+import com.project.ostis.Game;
+import com.project.ostis.GameRest;
 import javafx.collections.FXCollections;
 import javafx.collections.ObservableList;
 import javafx.event.ActionEvent;
@@ -21,6 +22,8 @@ import java.util.List;
 import java.util.ResourceBundle;
 
 public class MainController {
+
+    private ArrayList<String> gameNameList = new ArrayList<String>();
 
     private List<String> genreList = new ArrayList<String>();
     private List<String> settingList = new ArrayList<String>();
@@ -77,7 +80,8 @@ public class MainController {
         primaryStage.setTitle("Курсач");
         primaryStage.setScene(new Scene(root));
         if(checkBox.isSelected()) {
-            game = new Game(searchField.getText(),
+            game = new Game(0,
+                    searchField.getText(),
                     genreBox.getSelectionModel().getSelectedItem(),
                     settingBox.getSelectionModel().getSelectedItem(),
                     companyDevelopBox.getSelectionModel().getSelectedItem(),
@@ -89,30 +93,30 @@ public class MainController {
             game.setName(searchField.getText());
         }
         viewController.setGame(game);
-//        fill();
+        viewController.setLists(genreList, settingList, companyList, engineList, platformList, gameNameList);
+        viewController.addGame();
         primaryStage.show();
     }
 
 
     public void findGames() throws IOException {
-        //здесь метод поиска подходящих игр
-        Game game = new Game("Dota 2",
-                "MOBA",
-                "fantasy",
-                "Valve",
-                "Valve",
-                "Source 2",
-                "Windows");
-        data.add(game);
-        game = new Game("CS:GO",
-                "shooter",
-                "fantasy",
-                "Valve",
-                "Valve",
-                "Source 2",
-                "Windows");
-        data.add(game);
-        table.refresh();
+        GameRest gameRest = new GameRest();
+        data.clear();
+        if (checkBox.isSelected()){
+            System.out.println("check");
+        } else {
+            if (searchField.getText() != null) {
+                for (String name : gameNameList) {
+                    System.out.println(name);
+                    if (name.contains(searchField.getText())) {
+                        Game game = new Game();
+                        game.setName(name);
+                        data.add(game);
+                    }
+                }
+                table.refresh();
+            }
+        }
     }
 
     public void setStage(Stage stage) {
@@ -126,7 +130,8 @@ public class MainController {
                          List<String> settingList,
                          List<String> companyList,
                          List<String> engineList,
-                         List<String> platformList) {
+                         List<String> platformList,
+                         ArrayList<String> gameNameList) {
         this.genreList = genreList;
         this.settingList = settingList;
         this.companyList = companyList;
@@ -138,6 +143,15 @@ public class MainController {
         companyReleaseBox.setItems(FXCollections.observableArrayList(companyList));
         engineBox.setItems(FXCollections.observableArrayList(engineList));
         platformBox.setItems(FXCollections.observableArrayList(platformList));
+
+        genreBox.getSelectionModel().select("");
+        settingBox.getSelectionModel().select("");
+        companyDevelopBox.getSelectionModel().select("");
+        companyReleaseBox.getSelectionModel().select("");
+        engineBox.getSelectionModel().select("");
+        platformBox.getSelectionModel().select("");
+
+        this.gameNameList = gameNameList;
     }
 
     public void enableFilter(ActionEvent event) {
@@ -152,6 +166,7 @@ public class MainController {
         viewController.setStage(this.primaryStage);
         primaryStage.setTitle("Курсач");
         primaryStage.setScene(new Scene(root));
+        viewController.setLists(genreList, settingList, companyList, engineList, platformList, gameNameList);
         viewController.setGame(table.getSelectionModel().getSelectedItem());
         viewController.viewGame(table.getSelectionModel().getSelectedItem());
         primaryStage.show();
@@ -165,6 +180,7 @@ public class MainController {
         viewController.setStage(this.primaryStage);
         primaryStage.setTitle("Курсач");
         primaryStage.setScene(new Scene(root));
+        viewController.setLists(genreList, settingList, companyList, engineList, platformList, gameNameList);;
         viewController.setGame(table.getSelectionModel().getSelectedItem());
         viewController.editGame(table.getSelectionModel().getSelectedItem());
         primaryStage.show();

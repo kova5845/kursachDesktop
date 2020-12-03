@@ -1,6 +1,7 @@
 package com.project.controller;
 
-import com.project.model.Game;
+import com.project.ostis.Game;
+import com.project.ostis.GameRest;
 import javafx.collections.FXCollections;
 import javafx.fxml.FXML;
 import javafx.fxml.FXMLLoader;
@@ -18,6 +19,11 @@ import java.util.Arrays;
 import java.util.List;
 
 public class ViewController {
+
+    private String mode;
+    private Game globalGame;
+
+    private ArrayList<String> gameNameList = new ArrayList<String>();
 
     private List<String> genreList = new ArrayList<String>();
     private List<String> settingList = new ArrayList<String>();
@@ -60,14 +66,29 @@ public class ViewController {
     }
 
     public void add() throws IOException {
-        Game game = new Game(nameField.getText(),
-                genreBox.getSelectionModel().getSelectedItem(),
-                settingBox.getSelectionModel().getSelectedItem(),
-                companyDevelopBox.getSelectionModel().getSelectedItem(),
-                companyReleaseBox.getSelectionModel().getSelectedItem(),
-                engineBox.getSelectionModel().getSelectedItem(),
-                platformBox.getSelectionModel().getSelectedItem());
-        // здесь происходит добавление в остис
+        GameRest gameRest = new GameRest();
+        if ("insert".equals(mode)) {
+            Game game = new Game(0,
+                    nameField.getText(),
+                    genreBox.getSelectionModel().getSelectedItem(),
+                    settingBox.getSelectionModel().getSelectedItem(),
+                    companyDevelopBox.getSelectionModel().getSelectedItem(),
+                    companyReleaseBox.getSelectionModel().getSelectedItem(),
+                    engineBox.getSelectionModel().getSelectedItem(),
+                    platformBox.getSelectionModel().getSelectedItem());
+            gameRest.setGame(game);
+
+        }
+        if ("update".equals(mode)) {
+            globalGame.setName(nameField.getText());
+            globalGame.setGenre(genreBox.getSelectionModel().getSelectedItem());
+            globalGame.setSetting(settingBox.getSelectionModel().getSelectedItem());
+            globalGame.setCompanyDevelop(companyDevelopBox.getSelectionModel().getSelectedItem());
+            globalGame.setCompanyRelease(companyReleaseBox.getSelectionModel().getSelectedItem());
+            globalGame.setEngine(engineBox.getSelectionModel().getSelectedItem());
+            globalGame.setPlatform(platformBox.getSelectionModel().getSelectedItem());
+            gameRest.updateGame(globalGame);
+        }
         viewMain();
     }
 
@@ -83,22 +104,11 @@ public class ViewController {
         mainController.setStage(primaryStage);
         primaryStage.setTitle("Курсач");
         primaryStage.setScene(new Scene(root));
-        getInfo();
-        mainController.setLists(genreList, settingList, companyList, engineList, platformList);
+//        mainController.setLists(genreList, settingList, companyList, engineList, platformList);
         primaryStage.show();
     }
 
-    private void getInfo() {
-        genreList.addAll(Arrays.asList("MOBA", "shooter"));
-        settingList.addAll(Arrays.asList("fantasy", "XX century"));
-        companyList.addAll(Arrays.asList("Valve", "Nival"));
-        engineList.addAll(Arrays.asList("Source 2", "Unity"));
-        platformList.addAll(Arrays.asList("Windows", "Linux"));
-        // здесь должны быть методы взятия из остиса
-    }
-
     public void viewGame(Game game) {
-        getInfo();
         genreBox.setItems(FXCollections.observableArrayList(genreList));
         settingBox.setItems(FXCollections.observableArrayList(settingList));
         companyDevelopBox.setItems(FXCollections.observableArrayList(companyList));
@@ -125,8 +135,9 @@ public class ViewController {
         addButton.setVisible(true);
     }
 
-    public void editGame(Game game) {
-        getInfo();
+    public void editGame(Game gameName) {
+        mode = "update";
+        GameRest gameRest = new GameRest();
         genreBox.setItems(FXCollections.observableArrayList(genreList));
         settingBox.setItems(FXCollections.observableArrayList(settingList));
         companyDevelopBox.setItems(FXCollections.observableArrayList(companyList));
@@ -134,13 +145,50 @@ public class ViewController {
         engineBox.setItems(FXCollections.observableArrayList(engineList));
         platformBox.setItems(FXCollections.observableArrayList(platformList));
 
-        nameField.setText(game.getName());
-        genreBox.getSelectionModel().select(game.getGenre());
-        settingBox.getSelectionModel().select(game.getSetting());
-        companyDevelopBox.getSelectionModel().select(game.getCompanyDevelop());
-        companyReleaseBox.getSelectionModel().select(game.getCompanyRelease());
-        engineBox.getSelectionModel().select(game.getEngine());
-        platformBox.getSelectionModel().select(game.getPlatform());
+        globalGame = gameRest.getGame(gameName.getName());
+
+        nameField.setText(globalGame.getName());
+        genreBox.getSelectionModel().select(globalGame.getGenre());
+        settingBox.getSelectionModel().select(globalGame.getSetting());
+        companyDevelopBox.getSelectionModel().select(globalGame.getCompanyDevelop());
+        companyReleaseBox.getSelectionModel().select(globalGame.getCompanyRelease());
+        engineBox.getSelectionModel().select(globalGame.getEngine());
+        platformBox.getSelectionModel().select(globalGame.getPlatform());
+
+        addButton.setText("Редактировать");
+
     }
+
+    public void setLists(List<String> genreList,
+                         List<String> settingList,
+                         List<String> companyList,
+                         List<String> engineList,
+                         List<String> platformList,
+                         ArrayList<String> gameNameList) {
+        this.genreList = genreList;
+        this.settingList = settingList;
+        this.companyList = companyList;
+        this.engineList = engineList;
+        this.platformList = platformList;
+        genreBox.setItems(FXCollections.observableArrayList(genreList));
+        settingBox.setItems(FXCollections.observableArrayList(settingList));
+        companyDevelopBox.setItems(FXCollections.observableArrayList(companyList));
+        companyReleaseBox.setItems(FXCollections.observableArrayList(companyList));
+        engineBox.setItems(FXCollections.observableArrayList(engineList));
+        platformBox.setItems(FXCollections.observableArrayList(platformList));
+
+        this.gameNameList = gameNameList;
+    }
+
+    public void addGame() {
+        mode = "insert";
+        genreBox.getSelectionModel().select("");
+        settingBox.getSelectionModel().select("");
+        companyDevelopBox.getSelectionModel().select("");
+        companyReleaseBox.getSelectionModel().select("");
+        engineBox.getSelectionModel().select("");
+        platformBox.getSelectionModel().select("");
+    }
+
 
 }
