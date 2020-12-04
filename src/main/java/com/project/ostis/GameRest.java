@@ -244,13 +244,14 @@ public class GameRest {
                 game.getPlatform() +
                 game.getGenre() +
                 game.getSetting());
-        ScAddr conEngine = sctpClient.findElementBySystemIdentifier("game_engine");
-        ScAddr conPlatform = sctpClient.findElementBySystemIdentifier("game_platform");
-        ScAddr conCompany = sctpClient.findElementBySystemIdentifier("concept_company");
-        ScAddr scGame = this.findNodeById(COMPUTER_GAME, game.getName());
-        if(scGame == null){
-            return null;
-        }
+//        ScAddr conEngine = sctpClient.findElementBySystemIdentifier("game_engine");
+//        ScAddr conPlatform = sctpClient.findElementBySystemIdentifier("game_platform");
+//        ScAddr conCompany = sctpClient.findElementBySystemIdentifier("concept_company");
+//        ScAddr scGame = this.findNodeById(COMPUTER_GAME, game.getName());
+        ScAddr scGame = new ScAddr(game.getScAddr());
+//        if(scGame == null){
+//            return null;
+//        }
         this.deleteArc(scGame, ID);
         this.addToName(scGame, game.getName());
         ScAddr genre = this.findNodeById(GENRE, game.getGenre());
@@ -263,22 +264,22 @@ public class GameRest {
             this.deleteArc3(scGame, setting, SETTING);
             sctpClient.createArc(setting, scGame, new ScType(ScType.ArcPosConstPerm));
         }
-        ScAddr engine = this.findNodeById(conEngine, game.getEngine());
+        ScAddr engine = this.findNodeById(ENGINE_CONCEPT, game.getEngine());
         if(engine != null) {
             this.deleteArc(scGame, ENGINE);
             this.addToGame(scGame, engine, ENGINE);
         }
-        ScAddr companyDevelop = this.findNodeById(conCompany, game.getCompanyDevelop());
+        ScAddr companyDevelop = this.findNodeById(COMPANY, game.getCompanyDevelop());
         if(companyDevelop != null) {
             this.deleteArc(scGame, COMPANY_DEVELOP);
             this.addToGame(scGame, companyDevelop, COMPANY_DEVELOP);
         }
-        ScAddr companyRelease = this.findNodeById(conCompany, game.getCompanyRelease());
+        ScAddr companyRelease = this.findNodeById(COMPANY, game.getCompanyRelease());
         if(companyRelease != null) {
             this.deleteArc(scGame, COMPANY_RELEASE);
             this.addToGame(scGame, companyRelease, COMPANY_RELEASE);
         }
-        ScAddr platform = this.findNodeById(conPlatform, game.getPlatform());
+        ScAddr platform = this.findNodeById(PLATFORM_CONCEPT, game.getPlatform());
         if(platform != null) {
             this.deleteArc(scGame, PLATFORM);
             this.addToGame(scGame, platform, PLATFORM);
@@ -286,9 +287,10 @@ public class GameRest {
         return scGame;
     }
 
-    public boolean deleteGame(String name){
+    public boolean deleteGame(Game game){
         this.connect();
-        ScAddr scGame = this.findNodeById(COMPUTER_GAME, name);
+        ScAddr scGame = this.findNodeById(COMPUTER_GAME, game.getName());
+//        ScAddr scGame = new ScAddr(game.getScAddr());
         if(scGame == null){
             return false;
         }
@@ -339,5 +341,34 @@ public class GameRest {
     public static void main(String[] args) {
         GameRest gameRest = new GameRest();
         gameRest.connect();
+    }
+
+    public boolean getGameWithFilter(String name,
+                                     String genre,
+                                     String setting,
+                                     String companyDevelop,
+                                     String companyRelease,
+                                     String engine,
+                                     String platform) {
+        Game game = getGame(name);
+        if (!"".equals(genre) && !genre.equals(game.getGenre())) {
+            return false;
+        }
+        if (!"".equals(setting) && !setting.equals(game.getSetting())) {
+            return false;
+        }
+        if (!"".equals(companyDevelop) && !companyDevelop.equals(game.getCompanyDevelop())) {
+            return false;
+        }
+        if (!"".equals(companyRelease) && !companyRelease.equals(game.getCompanyRelease())) {
+            return false;
+        }
+        if (!"".equals(engine) && !engine.equals(game.getEngine())) {
+            return false;
+        }
+        if (!"".equals(platform) && !platform.equals(game.getPlatform())) {
+            return false;
+        }
+        return true;
     }
 }

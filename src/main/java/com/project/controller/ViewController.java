@@ -57,6 +57,8 @@ public class ViewController {
     @FXML
     private Button addButton;
 
+    private MainController mainController;
+
 
     public void setStage(Stage stage) {
         this.primaryStage = stage;
@@ -77,9 +79,11 @@ public class ViewController {
                     engineBox.getSelectionModel().getSelectedItem(),
                     platformBox.getSelectionModel().getSelectedItem());
             gameRest.setGame(game);
+            mainController.gameNameList.add(game.getName());
 
         }
         if ("update".equals(mode)) {
+            String name = globalGame.getName();
             globalGame.setName(nameField.getText());
             globalGame.setGenre(genreBox.getSelectionModel().getSelectedItem());
             globalGame.setSetting(settingBox.getSelectionModel().getSelectedItem());
@@ -87,7 +91,9 @@ public class ViewController {
             globalGame.setCompanyRelease(companyReleaseBox.getSelectionModel().getSelectedItem());
             globalGame.setEngine(engineBox.getSelectionModel().getSelectedItem());
             globalGame.setPlatform(platformBox.getSelectionModel().getSelectedItem());
-            gameRest.updateGame(globalGame);
+            System.out.println(gameRest.updateGame(globalGame));
+            mainController.gameNameList.remove(name);
+            mainController.gameNameList.add(globalGame.getName());
         }
         viewMain();
     }
@@ -100,15 +106,17 @@ public class ViewController {
         String fxmlFile = "/fxml/main.fxml";
         FXMLLoader loader = new FXMLLoader();
         Parent root = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-        MainController mainController = loader.getController();
-        mainController.setStage(primaryStage);
+//        MainController mainController = loader.getController();
+//        mainController.setStage(primaryStage);
         primaryStage.setTitle("Курсач");
-        primaryStage.setScene(new Scene(root));
+        primaryStage.setScene(mainController.getPrimaryScene());
+//        primaryStage.setScene(new Scene(root));
 //        mainController.setLists(genreList, settingList, companyList, engineList, platformList);
         primaryStage.show();
     }
 
-    public void viewGame(Game game) {
+    public void viewGame(Game gameName) {
+        GameRest gameRest = new GameRest();
         genreBox.setItems(FXCollections.observableArrayList(genreList));
         settingBox.setItems(FXCollections.observableArrayList(settingList));
         companyDevelopBox.setItems(FXCollections.observableArrayList(companyList));
@@ -123,6 +131,8 @@ public class ViewController {
         companyReleaseBox.setDisable(true);
         engineBox.setDisable(true);
         platformBox.setDisable(true);
+
+        Game game = gameRest.getGame(gameName.getName());
 
         nameField.setText(game.getName());
         genreBox.getSelectionModel().select(game.getGenre());
@@ -190,5 +200,7 @@ public class ViewController {
         platformBox.getSelectionModel().select("");
     }
 
-
+    public void setController(MainController mainController) {
+        this.mainController = mainController;
+    }
 }

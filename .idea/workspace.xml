@@ -20,47 +20,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="89b911a4-a924-410c-96ac-b138595f1da3" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/.idea/jarRepositories.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ComputerGame.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/Game.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/GameRest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ScAddr.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ScArcInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ScKeynodes.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/ScType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpClient.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmd.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdArcInfo.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdCreateArc.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdCreateLink.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdCreateNode.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdElementType.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdEraseElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdFindBySysIdentifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdFindLinksByContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdGetLinkContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdIsElement.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdSetLinkContent.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpCmdSetSysIdentifier.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpIterator.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/SctpResult.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/Server.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/TestTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/tasks/ConnectTask.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/tasks/RequestCommand.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/MainApp.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/MainApp.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/controller/MainController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/controller/MainController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/com/project/controller/ViewController.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/controller/ViewController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/model/Game.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/project/ostis/GameRest.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/com/project/ostis/GameRest.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/MainApp.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/MainApp.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/controller/MainController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/controller/MainController.class" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/target/classes/com/project/controller/ViewController.class" beforeDir="false" afterPath="$PROJECT_DIR$/target/classes/com/project/controller/ViewController.class" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/target/classes/com/project/model/Game.class" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -125,6 +92,7 @@
       <workItem from="1606756037638" duration="12027000" />
       <workItem from="1606839735963" duration="14435000" />
       <workItem from="1607013764247" duration="14460000" />
+      <workItem from="1607099068514" duration="7394000" />
     </task>
     <servers />
   </component>
@@ -141,6 +109,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
@@ -166,41 +135,45 @@
       <screen x="0" y="0" width="1366" height="728" />
     </state>
     <state x="463" y="105" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1606765412558" />
-    <state width="1324" height="192" key="GridCell.Tab.0.bottom" timestamp="1607028312745">
+    <state width="1324" height="162" key="GridCell.Tab.0.bottom" timestamp="1607106486071">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="208" key="GridCell.Tab.0.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606937052574" />
-    <state width="1324" height="192" key="GridCell.Tab.0.bottom/0.0.1366.741@0.0.1366.741" timestamp="1607028312745" />
-    <state width="1324" height="192" key="GridCell.Tab.0.center" timestamp="1607028312744">
+    <state width="1324" height="162" key="GridCell.Tab.0.bottom/0.0.1366.741@0.0.1366.741" timestamp="1607106486071" />
+    <state width="1324" height="162" key="GridCell.Tab.0.center" timestamp="1607106486068">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="208" key="GridCell.Tab.0.center/0.0.1366.728@0.0.1366.728" timestamp="1606937052574" />
-    <state width="1324" height="192" key="GridCell.Tab.0.center/0.0.1366.741@0.0.1366.741" timestamp="1607028312744" />
-    <state width="1324" height="192" key="GridCell.Tab.0.left" timestamp="1607028312743">
+    <state width="1324" height="162" key="GridCell.Tab.0.center/0.0.1366.741@0.0.1366.741" timestamp="1607106486068" />
+    <state width="1324" height="162" key="GridCell.Tab.0.left" timestamp="1607106486067">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="208" key="GridCell.Tab.0.left/0.0.1366.728@0.0.1366.728" timestamp="1606937052573" />
-    <state width="1324" height="192" key="GridCell.Tab.0.left/0.0.1366.741@0.0.1366.741" timestamp="1607028312743" />
-    <state width="1324" height="192" key="GridCell.Tab.0.right" timestamp="1607028312745">
+    <state width="1324" height="162" key="GridCell.Tab.0.left/0.0.1366.741@0.0.1366.741" timestamp="1607106486067" />
+    <state width="1324" height="162" key="GridCell.Tab.0.right" timestamp="1607106486070">
       <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="208" key="GridCell.Tab.0.right/0.0.1366.728@0.0.1366.728" timestamp="1606937052574" />
-    <state width="1324" height="192" key="GridCell.Tab.0.right/0.0.1366.741@0.0.1366.741" timestamp="1607028312745" />
-    <state width="1323" height="237" key="GridCell.Tab.1.bottom" timestamp="1606775274967">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="162" key="GridCell.Tab.0.right/0.0.1366.741@0.0.1366.741" timestamp="1607106486070" />
+    <state width="1324" height="162" key="GridCell.Tab.1.bottom" timestamp="1607106486075">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="237" key="GridCell.Tab.1.bottom/0.0.1366.728@0.0.1366.728" timestamp="1606775274967" />
-    <state width="1323" height="237" key="GridCell.Tab.1.center" timestamp="1606775274967">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="162" key="GridCell.Tab.1.bottom/0.0.1366.741@0.0.1366.741" timestamp="1607106486075" />
+    <state width="1324" height="162" key="GridCell.Tab.1.center" timestamp="1607106486072">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="237" key="GridCell.Tab.1.center/0.0.1366.728@0.0.1366.728" timestamp="1606775274967" />
-    <state width="1323" height="237" key="GridCell.Tab.1.left" timestamp="1606775274967">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="162" key="GridCell.Tab.1.center/0.0.1366.741@0.0.1366.741" timestamp="1607106486072" />
+    <state width="1324" height="162" key="GridCell.Tab.1.left" timestamp="1607106486071">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="237" key="GridCell.Tab.1.left/0.0.1366.728@0.0.1366.728" timestamp="1606775274967" />
-    <state width="1323" height="237" key="GridCell.Tab.1.right" timestamp="1606775274967">
-      <screen x="0" y="0" width="1366" height="728" />
+    <state width="1324" height="162" key="GridCell.Tab.1.left/0.0.1366.741@0.0.1366.741" timestamp="1607106486071" />
+    <state width="1324" height="162" key="GridCell.Tab.1.right" timestamp="1607106486073">
+      <screen x="0" y="0" width="1366" height="741" />
     </state>
     <state width="1323" height="237" key="GridCell.Tab.1.right/0.0.1366.728@0.0.1366.728" timestamp="1606775274967" />
+    <state width="1324" height="162" key="GridCell.Tab.1.right/0.0.1366.741@0.0.1366.741" timestamp="1607106486073" />
   </component>
 </project>

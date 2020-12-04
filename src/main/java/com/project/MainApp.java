@@ -41,9 +41,11 @@ public class MainApp extends Application {
         MainController mainController = loader.getController();
         mainController.setStage(stage);
         stage.setTitle("Курсач");
-        stage.setScene(new Scene(root));
+        Scene scene = new Scene(root);
+        stage.setScene(scene);
         getInfo();
         mainController.setLists(genreList, settingList, companyList, engineList, platformList, gameNameList);
+        mainController.setPrimaryScene(scene);
         stage.show();
     }
 

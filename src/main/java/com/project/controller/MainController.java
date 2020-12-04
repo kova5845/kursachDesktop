@@ -23,7 +23,7 @@ import java.util.ResourceBundle;
 
 public class MainController {
 
-    private ArrayList<String> gameNameList = new ArrayList<String>();
+    public ArrayList<String> gameNameList = new ArrayList<String>();
 
     private List<String> genreList = new ArrayList<String>();
     private List<String> settingList = new ArrayList<String>();
@@ -32,6 +32,7 @@ public class MainController {
     private List<String> platformList = new ArrayList<String>();
 
     private Stage primaryStage;
+    private Scene primaryScene;
 
     private ViewController viewController;
 
@@ -72,13 +73,7 @@ public class MainController {
 
     public void addGame() throws IOException {
         Game game;
-        String fxmlFile = "/fxml/view.fxml";
-        FXMLLoader loader = new FXMLLoader();
-        Parent root = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-        viewController = loader.getController();
-        viewController.setStage(this.primaryStage);
-        primaryStage.setTitle("Курсач");
-        primaryStage.setScene(new Scene(root));
+        getViewForm();
         if(checkBox.isSelected()) {
             game = new Game(0,
                     searchField.getText(),
@@ -93,17 +88,34 @@ public class MainController {
             game.setName(searchField.getText());
         }
         viewController.setGame(game);
-        viewController.setLists(genreList, settingList, companyList, engineList, platformList, gameNameList);
         viewController.addGame();
         primaryStage.show();
     }
-
 
     public void findGames() throws IOException {
         GameRest gameRest = new GameRest();
         data.clear();
         if (checkBox.isSelected()){
-            System.out.println("check");
+            if (searchField.getText() != null) {
+                for (String name : gameNameList) {
+                    System.out.println(name);
+                    if (name.contains(searchField.getText())) {
+                        if (gameRest.getGameWithFilter(name,
+                                genreBox.getSelectionModel().getSelectedItem(),
+                                settingBox.getSelectionModel().getSelectedItem(),
+                                companyDevelopBox.getSelectionModel().getSelectedItem(),
+                                companyReleaseBox.getSelectionModel().getSelectedItem(),
+                                engineBox.getSelectionModel().getSelectedItem(),
+                                platformBox.getSelectionModel().getSelectedItem())) {
+                            Game game = new Game();
+                            game.setName(name);
+                            data.add(game);
+                        }
+
+                    }
+                }
+            }
+                table.refresh();
         } else {
             if (searchField.getText() != null) {
                 for (String name : gameNameList) {
@@ -159,6 +171,38 @@ public class MainController {
     }
 
     public void viewGame() throws IOException {
+        getViewForm();
+        viewController.setGame(table.getSelectionModel().getSelectedItem());
+        viewController.viewGame(table.getSelectionModel().getSelectedItem());
+        primaryStage.show();
+    }
+
+    public void editGame() throws IOException {
+        getViewForm();
+        viewController.setGame(table.getSelectionModel().getSelectedItem());
+        viewController.editGame(table.getSelectionModel().getSelectedItem());
+        primaryStage.show();
+    }
+
+    public void deleteGame() {
+        GameRest gameRest = new GameRest();
+        Game game = table.getSelectionModel().getSelectedItem();
+        System.out.println(game.getName());
+        System.out.println(gameRest.deleteGame(game));
+        data.remove(game);
+        gameNameList.remove(game.getName());
+        table.refresh();
+    }
+
+    public void setPrimaryScene(Scene primaryScene) {
+        this.primaryScene = primaryScene;
+    }
+
+    public Scene getPrimaryScene() {
+        return this.primaryScene;
+    }
+
+    private void getViewForm() throws IOException {
         String fxmlFile = "/fxml/view.fxml";
         FXMLLoader loader = new FXMLLoader();
         Parent root = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
@@ -167,27 +211,7 @@ public class MainController {
         primaryStage.setTitle("Курсач");
         primaryStage.setScene(new Scene(root));
         viewController.setLists(genreList, settingList, companyList, engineList, platformList, gameNameList);
-        viewController.setGame(table.getSelectionModel().getSelectedItem());
-        viewController.viewGame(table.getSelectionModel().getSelectedItem());
-        primaryStage.show();
-    }
-
-    public void editGame() throws IOException {
-        String fxmlFile = "/fxml/view.fxml";
-        FXMLLoader loader = new FXMLLoader();
-        Parent root = (Parent) loader.load(getClass().getResourceAsStream(fxmlFile));
-        viewController = loader.getController();
-        viewController.setStage(this.primaryStage);
-        primaryStage.setTitle("Курсач");
-        primaryStage.setScene(new Scene(root));
-        viewController.setLists(genreList, settingList, companyList, engineList, platformList, gameNameList);;
-        viewController.setGame(table.getSelectionModel().getSelectedItem());
-        viewController.editGame(table.getSelectionModel().getSelectedItem());
-        primaryStage.show();
-    }
-
-    public void deleteGame() {
-
+        viewController.setController(this);
     }
 
 }
